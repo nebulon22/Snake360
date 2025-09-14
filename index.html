@@ -6,23 +6,27 @@
     body { margin:0; overflow:hidden; background:#222; }
     canvas { display:block; background:#111; margin:auto; }
     #joystick {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      touch-action: none;
-    }
-    #stick {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      top: 25px;
-      left: 25px;
+  position: fixed;         /* ganti absolute -> fixed */
+  bottom: 40px;            /* agak naik sedikit */
+  left: 50%;               /* posisikan di tengah */
+  transform: translateX(-50%); /* geser ke kiri setengah lebar */
+  width: 180px;            /* lebih besar */
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  touch-action: none;
+}
+#stick {
+  position: absolute;
+  width: 80px;             /* lebih besar */
+  height: 80px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  top: 50%;                /* biar pas di tengah lingkaran luar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
     }
   </style>
 </head>
@@ -165,3 +169,4 @@ function loop(){
 </script>
 </body>
 </html>
+
